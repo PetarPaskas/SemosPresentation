@@ -1,0 +1,207 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Petar\\Desktop\\Semos\\Code\\DocumentService\\DocumentService\\DocumentService.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Petar\\Desktop\\Semos\\Code\\DocumentService\\DocumentService.BackgroundFileProcessing\\DocumentService.BackgroundFileProcessing.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Petar\\Desktop\\Semos\\Code\\DocumentService\\DocumentService.BackgroundFileProcessing\\DocumentService.BackgroundFileProcessing.csproj",
+        "projectName": "DocumentService.BackgroundFileProcessing",
+        "projectPath": "C:\\Users\\Petar\\Desktop\\Semos\\Code\\DocumentService\\DocumentService.BackgroundFileProcessing\\DocumentService.BackgroundFileProcessing.csproj",
+        "packagesPath": "C:\\Users\\Petar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Petar\\Desktop\\Semos\\Code\\DocumentService\\DocumentService.BackgroundFileProcessing\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Petar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Petar\\Desktop\\Semos\\Code\\DocumentService\\DocumentService.Domain\\DocumentService.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Petar\\Desktop\\Semos\\Code\\DocumentService\\DocumentService.Domain\\DocumentService.Domain.csproj",
+        "projectName": "DocumentService.Domain",
+        "projectPath": "C:\\Users\\Petar\\Desktop\\Semos\\Code\\DocumentService\\DocumentService.Domain\\DocumentService.Domain.csproj",
+        "packagesPath": "C:\\Users\\Petar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Petar\\Desktop\\Semos\\Code\\DocumentService\\DocumentService.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Petar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Petar\\Desktop\\Semos\\Code\\DocumentService\\DocumentService\\DocumentService.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Petar\\Desktop\\Semos\\Code\\DocumentService\\DocumentService\\DocumentService.csproj",
+        "projectName": "DocumentService",
+        "projectPath": "C:\\Users\\Petar\\Desktop\\Semos\\Code\\DocumentService\\DocumentService\\DocumentService.csproj",
+        "packagesPath": "C:\\Users\\Petar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Petar\\Desktop\\Semos\\Code\\DocumentService\\DocumentService\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Petar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Petar\\Desktop\\Semos\\Code\\DocumentService\\DocumentService.BackgroundFileProcessing\\DocumentService.BackgroundFileProcessing.csproj": {
+                "projectPath": "C:\\Users\\Petar\\Desktop\\Semos\\Code\\DocumentService\\DocumentService.BackgroundFileProcessing\\DocumentService.BackgroundFileProcessing.csproj"
+              },
+              "C:\\Users\\Petar\\Desktop\\Semos\\Code\\DocumentService\\DocumentService.Domain\\DocumentService.Domain.csproj": {
+                "projectPath": "C:\\Users\\Petar\\Desktop\\Semos\\Code\\DocumentService\\DocumentService.Domain\\DocumentService.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

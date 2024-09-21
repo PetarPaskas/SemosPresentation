@@ -1,0 +1,11 @@
+C:\Users\Petar\Desktop\Semos\Code\DocumentService\DocumentService.Domain\obj\Debug\net6.0\DocumentService.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Petar\Desktop\Semos\Code\DocumentService\DocumentService.Domain\obj\Debug\net6.0\DocumentService.Domain.AssemblyInfoInputs.cache
+C:\Users\Petar\Desktop\Semos\Code\DocumentService\DocumentService.Domain\obj\Debug\net6.0\DocumentService.Domain.AssemblyInfo.cs
+C:\Users\Petar\Desktop\Semos\Code\DocumentService\DocumentService.Domain\obj\Debug\net6.0\DocumentService.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Petar\Desktop\Semos\Code\DocumentService\DocumentService.Domain\bin\Debug\net6.0\DocumentService.Domain.deps.json
+C:\Users\Petar\Desktop\Semos\Code\DocumentService\DocumentService.Domain\bin\Debug\net6.0\DocumentService.Domain.dll
+C:\Users\Petar\Desktop\Semos\Code\DocumentService\DocumentService.Domain\bin\Debug\net6.0\DocumentService.Domain.pdb
+C:\Users\Petar\Desktop\Semos\Code\DocumentService\DocumentService.Domain\obj\Debug\net6.0\DocumentService.Domain.dll
+C:\Users\Petar\Desktop\Semos\Code\DocumentService\DocumentService.Domain\obj\Debug\net6.0\refint\DocumentService.Domain.dll
+C:\Users\Petar\Desktop\Semos\Code\DocumentService\DocumentService.Domain\obj\Debug\net6.0\DocumentService.Domain.pdb
+C:\Users\Petar\Desktop\Semos\Code\DocumentService\DocumentService.Domain\obj\Debug\net6.0\ref\DocumentService.Domain.dll
