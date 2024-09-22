@@ -8,6 +8,7 @@ namespace DocumentService.Domain.Clients.SQS
 {
     public class SQSReceiveMessageResponse
     {
+        public string Key { get; set; }
         public int ReceivedMessages { get; set; }
         public string MessageContent { get; set; }
         public string MessageId { get; set; }

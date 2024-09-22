@@ -17,7 +17,7 @@ namespace DocumentService.BackgroundFileProcessing.Mappers
             string[] items = new string[source.Items.Count()];
             int i = 0;
 
-            foreach(var item in items)
+            foreach(var item in source.Items)
             {
                 items[i] = item;
                 i++;

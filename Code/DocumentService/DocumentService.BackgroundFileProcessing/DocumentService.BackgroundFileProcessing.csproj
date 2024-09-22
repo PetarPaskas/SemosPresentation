@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="4.0.0-preview.2" />
     <PackageReference Include="AWSSDK.SQS" Version="4.0.0-preview.2" />
     <PackageReference Include="EPPlus" Version="7.3.2" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />

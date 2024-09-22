@@ -8,11 +8,15 @@ public class XlsFileInputDeliveryContentV1Validator : IXlsFileInputDeliveryConte
     {
         bool emptyData = data == null;
         if (emptyData)
-            FailureResult("Contract cannot be empty");
+            return FailureResult("Contract cannot be empty");
+
+        bool emptyRowProperty = data.Row == null;
+        if (emptyRowProperty)
+            return FailureResult("Contract row cannot be empty");
 
         bool emptyItems = data.Items == null || data.Items.Count() == 0;
         if (emptyItems)
-            FailureResult("Contract items cannot be empty");
+            return FailureResult("Contract items cannot be empty");
 
 
         return SuccessResult();

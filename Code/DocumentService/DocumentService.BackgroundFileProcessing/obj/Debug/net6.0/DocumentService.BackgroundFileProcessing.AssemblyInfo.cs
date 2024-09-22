@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DocumentService.BackgroundFileProcessing")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7bdf58891efca4979c100f072915c7597534414d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+220dc1cc0dad4e591d90e12667148f9cda8f6559")]
 [assembly: System.Reflection.AssemblyProductAttribute("DocumentService.BackgroundFileProcessing")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DocumentService.BackgroundFileProcessing")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

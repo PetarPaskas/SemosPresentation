@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("5da9c5f3-eee0-49c8-a483-a707b5bb0b7f")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("DocumentService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7bdf58891efca4979c100f072915c7597534414d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+220dc1cc0dad4e591d90e12667148f9cda8f6559")]
 [assembly: System.Reflection.AssemblyProductAttribute("DocumentService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DocumentService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

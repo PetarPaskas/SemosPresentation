@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "r+CZkus6V+Yea3LQzq0tuxZK3nOc29O3dkD5cdBVn456nxSr4jA9g3IqquJ6BhOHBbwP0+zPq8B7MAgcQ/HsHQ==",
+  "dgSpecHash": "r+zkAgPuXTCcrHyX7d3AhQNJAFL/q+1fkGX0W16mttGXrM2PvHvF3Fll/ja4H4TfrtPBWyCp4ZopvzGWz8Taxg==",
   "success": true,
   "projectFilePath": "C:\\Users\\petar\\OneDrive\\Radna površina\\Semos\\Code\\Code\\DocumentService\\DocumentService\\DocumentService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\petar\\.nuget\\packages\\awssdk.core\\4.0.0-preview.2\\awssdk.core.4.0.0-preview.2.nupkg.sha512",
+    "C:\\Users\\petar\\.nuget\\packages\\awssdk.extensions.netcore.setup\\4.0.0-preview.2\\awssdk.extensions.netcore.setup.4.0.0-preview.2.nupkg.sha512",
     "C:\\Users\\petar\\.nuget\\packages\\awssdk.s3\\4.0.0-preview.2\\awssdk.s3.4.0.0-preview.2.nupkg.sha512",
     "C:\\Users\\petar\\.nuget\\packages\\awssdk.sqs\\4.0.0-preview.2\\awssdk.sqs.4.0.0-preview.2.nupkg.sha512",
     "C:\\Users\\petar\\.nuget\\packages\\epplus\\7.3.2\\epplus.7.3.2.nupkg.sha512",
