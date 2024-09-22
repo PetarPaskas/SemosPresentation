@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DocumentService.Domain
-build_property.ProjectDir = C:\Users\Petar\Desktop\Semos\Code\DocumentService\DocumentService.Domain\
+build_property.ProjectDir = C:\Users\petar\OneDrive\Radna površina\Semos\Code\Code\DocumentService\DocumentService.Domain\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

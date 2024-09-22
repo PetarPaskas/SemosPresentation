@@ -8,5 +8,6 @@ namespace DocumentService.Domain.Clients.S3
 {
     public class S3PutObjectDto
     {
+        public bool IsSuccess { get; set; }
     }
 }
