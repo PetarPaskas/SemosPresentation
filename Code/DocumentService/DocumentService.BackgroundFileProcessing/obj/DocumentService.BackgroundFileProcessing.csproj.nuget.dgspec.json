@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Petar\\Desktop\\Semos\\Code\\DocumentService\\DocumentService.BackgroundFileProcessing\\DocumentService.BackgroundFileProcessing.csproj": {}
+    "C:\\Users\\petar\\OneDrive\\Radna površina\\Semos\\Code\\Code\\DocumentService\\DocumentService.BackgroundFileProcessing\\DocumentService.BackgroundFileProcessing.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Petar\\Desktop\\Semos\\Code\\DocumentService\\DocumentService.BackgroundFileProcessing\\DocumentService.BackgroundFileProcessing.csproj": {
+    "C:\\Users\\petar\\OneDrive\\Radna površina\\Semos\\Code\\Code\\DocumentService\\DocumentService.BackgroundFileProcessing\\DocumentService.BackgroundFileProcessing.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Petar\\Desktop\\Semos\\Code\\DocumentService\\DocumentService.BackgroundFileProcessing\\DocumentService.BackgroundFileProcessing.csproj",
+        "projectUniqueName": "C:\\Users\\petar\\OneDrive\\Radna površina\\Semos\\Code\\Code\\DocumentService\\DocumentService.BackgroundFileProcessing\\DocumentService.BackgroundFileProcessing.csproj",
         "projectName": "DocumentService.BackgroundFileProcessing",
-        "projectPath": "C:\\Users\\Petar\\Desktop\\Semos\\Code\\DocumentService\\DocumentService.BackgroundFileProcessing\\DocumentService.BackgroundFileProcessing.csproj",
-        "packagesPath": "C:\\Users\\Petar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Petar\\Desktop\\Semos\\Code\\DocumentService\\DocumentService.BackgroundFileProcessing\\obj\\",
+        "projectPath": "C:\\Users\\petar\\OneDrive\\Radna površina\\Semos\\Code\\Code\\DocumentService\\DocumentService.BackgroundFileProcessing\\DocumentService.BackgroundFileProcessing.csproj",
+        "packagesPath": "C:\\Users\\petar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\petar\\OneDrive\\Radna površina\\Semos\\Code\\Code\\DocumentService\\DocumentService.BackgroundFileProcessing\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Petar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\petar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,83 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\petar\\OneDrive\\Radna površina\\Semos\\Code\\Code\\DocumentService\\DocumentService.Domain\\DocumentService.Domain.csproj": {
+                "projectPath": "C:\\Users\\petar\\OneDrive\\Radna površina\\Semos\\Code\\Code\\DocumentService\\DocumentService.Domain\\DocumentService.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AWSSDK.S3": {
+              "target": "Package",
+              "version": "[4.0.0-preview.2, )"
+            },
+            "AWSSDK.SQS": {
+              "target": "Package",
+              "version": "[4.0.0-preview.2, )"
+            },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[7.3.2, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\petar\\OneDrive\\Radna površina\\Semos\\Code\\Code\\DocumentService\\DocumentService.Domain\\DocumentService.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\petar\\OneDrive\\Radna površina\\Semos\\Code\\Code\\DocumentService\\DocumentService.Domain\\DocumentService.Domain.csproj",
+        "projectName": "DocumentService.Domain",
+        "projectPath": "C:\\Users\\petar\\OneDrive\\Radna površina\\Semos\\Code\\Code\\DocumentService\\DocumentService.Domain\\DocumentService.Domain.csproj",
+        "packagesPath": "C:\\Users\\petar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\petar\\OneDrive\\Radna površina\\Semos\\Code\\Code\\DocumentService\\DocumentService.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\petar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -35,11 +111,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -61,7 +132,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
