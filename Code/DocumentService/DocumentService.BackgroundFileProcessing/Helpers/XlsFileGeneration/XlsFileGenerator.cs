@@ -19,17 +19,17 @@ namespace DocumentService.BackgroundFileProcessing.Helpers.XlsFileGeneration
 
             using (var package = new ExcelPackage())
             {
-                var worksheet = package.Workbook.Worksheets.Add("Sheet1");
+                var worksheet = package.Workbook.Worksheets.Add("SheetOne");
 
                 for (int i = 0; i < data.Count(); i++)
                 {
-                    worksheet.Cells[rowToWrite, i + 1].Value = data[i];
+                    worksheet.SetValue(rowToWrite, i+1, data[i]);
                 }
 
-                package.Save(); //try with FileInfo if it doesn't work
-                result = package.GetAsByteArray();
+                using var memStream = new MemoryStream();
+                package.SaveAs(memStream);
+                return memStream.ToArray();
             }
-            return result;
         }
     }
 }

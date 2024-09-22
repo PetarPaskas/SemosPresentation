@@ -4,10 +4,11 @@ using DocumentService.Domain.Clients.S3;
 
 namespace DocumentService.BackgroundFileProcessing.Clients.S3
 {
-    public class S3Client : IS3Client
+    public class DeliveriesS3Client : IS3Client
     {
         private IAmazonS3 _s3Client;
-        public S3Client(IAmazonS3 s3Client)
+        private string _bucketName = "x1234-deliveries";
+        public DeliveriesS3Client(IAmazonS3 s3Client)
         {
             _s3Client = s3Client;
         }
@@ -15,7 +16,7 @@ namespace DocumentService.BackgroundFileProcessing.Clients.S3
         {
             try
             {
-                DeleteObjectRequest request = new() { Key = objectPath };
+                DeleteObjectRequest request = new() { Key = objectPath, BucketName = _bucketName };
 
                 var response = await _s3Client.DeleteObjectAsync(request);
 
@@ -33,11 +34,16 @@ namespace DocumentService.BackgroundFileProcessing.Clients.S3
         {
             try
             {
-                GetObjectRequest request = new() { Key = objectPath };
+                GetObjectRequest request = new() { 
+                    BucketName = _bucketName,
+                    Key = objectPath 
+                };
 
                 var response = await _s3Client.GetObjectAsync(request);
 
-                return new S3GetObjectDto() { Content = null, IsSuccess = true };
+                byte[] responseBytes = ReadResponse(response);
+
+                return new S3GetObjectDto() { Content = responseBytes, IsSuccess = true };
 
             }
             catch (Exception ex)
@@ -48,12 +54,24 @@ namespace DocumentService.BackgroundFileProcessing.Clients.S3
 
         }
 
+        private byte[] ReadResponse(GetObjectResponse response)
+        {
+            using var memoryStream = new MemoryStream();
+            response.ResponseStream.CopyTo(memoryStream);
+
+            return memoryStream.ToArray();
+        }
+
         public async Task<S3PutObjectDto> PutAsync(string objectPath, byte[] objectData, string contentType)
         {
             try
             {
                 using Stream objectStream = new MemoryStream(objectData);
-                PutObjectRequest request = new() { Key = objectPath, InputStream = objectStream, ContentType = contentType };
+                PutObjectRequest request = new() { 
+                    Key = objectPath, 
+                    BucketName = _bucketName,
+                    InputStream = objectStream, 
+                    ContentType = contentType };
 
                 var response = await _s3Client.PutObjectAsync(request);
 

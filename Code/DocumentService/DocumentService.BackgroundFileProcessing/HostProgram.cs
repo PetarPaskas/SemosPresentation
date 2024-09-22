@@ -1,34 +1,35 @@
 ﻿using DocumentService.BackgroundFileProcessing.Processes;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
 
 namespace DocumentService.BackgroundFileProcessing;
 
 public class HostProgram : IHostedService
 {
-    private IFileGenerationProcess _fileGenerationProcess;
-    public HostProgram(FileGenerationProcess fileGenerationProcess)
+    private readonly IServiceScopeFactory _serviceScopeFactory;
+
+    public HostProgram(IServiceScopeFactory serviceScopeFactory)
     {
-        _fileGenerationProcess = fileGenerationProcess; 
+        _serviceScopeFactory = serviceScopeFactory;
     }
 
     public async Task StartAsync(CancellationToken cancellationToken)
     {
-
-        while(!cancellationToken.IsCancellationRequested)
+        await Console.Out.WriteLineAsync("HOST PROGRAM START");
+        while (!cancellationToken.IsCancellationRequested)
         {
-           Task.Factory.StartNew(_fileGenerationProcess.Process, TaskCreationOptions.AttachedToParent);
+            using (var scope = _serviceScopeFactory.CreateScope())
+            {
+                var fileGenerationProcess = scope.ServiceProvider.GetRequiredService<IFileGenerationProcess>();
+                await fileGenerationProcess.Process();
+            }
 
-            Thread.Sleep(2000);
+            await Task.Delay(2000, cancellationToken); 
         }
-
-        if (cancellationToken.IsCancellationRequested)
-           await StopAsync(cancellationToken);
     }
 
-    public Task StopAsync(CancellationToken cancellationToken)
+    public async Task StopAsync(CancellationToken cancellationToken)
     {
-        return Task.CompletedTask;
+        await Console.Out.WriteLineAsync("HOST PROGRAM END");
     }
-
 }

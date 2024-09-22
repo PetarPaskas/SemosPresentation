@@ -46,7 +46,7 @@ public class FileGenerationProcess : IFileGenerationProcess
             if (message == null)
                 return;
 
-            var contract = await TryReceiveContractOrEmpty(message);
+            var (contract, objectPath) = await TryReceiveContractOrEmpty(message);
 
             var validationResult = _xlsFileInputDeliveryContentValidator.Validate(contract);
             if (!validationResult.IsValid)
@@ -57,7 +57,7 @@ public class FileGenerationProcess : IFileGenerationProcess
                 throw new Exception(String.Join(' ', validationResult.Errors));
 
             _metadataRepository.UpdateFilesGenerated();
-            await CleanFromQueueAndDeleteRequestFromS3(message, "");
+            await CleanFromQueueAndDeleteRequestFromS3(message, objectPath);
 
         }catch(Exception ex)
         {
@@ -68,27 +68,40 @@ public class FileGenerationProcess : IFileGenerationProcess
 
     private async Task<SQSReceiveMessageResponse> TryReceiveMessageOrEmpty()
     {
-        var receiveResult = await _sqsClient.ReceiveMessage();
+        try
+        {
+            var receiveResult = await _sqsClient.ReceiveMessage();
 
-        if (receiveResult == null || receiveResult.ReceivedMessages == 0)
+            if (receiveResult == null || receiveResult.ReceivedMessages == 0)
+                return null;
+
+            return receiveResult;
+
+        }catch(Exception ex)
+        {
             return null;
+        }
 
-        return receiveResult;
 
     }
 
-    private async Task<XlsFileInputDeliveryContentV1> TryReceiveContractOrEmpty(SQSReceiveMessageResponse messageResponse)
+    private async Task<(XlsFileInputDeliveryContentV1, string)> TryReceiveContractOrEmpty(SQSReceiveMessageResponse messageResponse)
     {
         //Shouold look something like this
-        var response = JsonSerializer.Deserialize<S3EventNotification.S3EventNotificationRecord>(messageResponse.MessageContent);
-        string objectPath = response.S3.Object.Key;
+        var response = S3EventNotification.ParseJson(messageResponse.MessageContent);
+        string objectPath = response.Records.First().S3.Object.Key;
 
         var s3GetObjectResult = await _s3Client.GetAsync(objectPath);
 
         if (!s3GetObjectResult.IsSuccess)
-            return null;
+            return (null, null);
 
-        return JsonSerializer.Deserialize<XlsFileInputDeliveryContentV1>(s3GetObjectResult.Content);
+        return (JsonSerializer
+            .Deserialize<XlsFileInputDeliveryContentV1>
+            (s3GetObjectResult.Content, new JsonSerializerOptions()
+        {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+        }), objectPath);
     }
 
     private async Task<bool> GenerateAndPublish(XlsFileInputDeliveryContentV1 contract)
@@ -97,8 +110,8 @@ public class FileGenerationProcess : IFileGenerationProcess
 
         var file = _fileGenerator.Process(xlsFileMetadata);
 
-        string destinationPath = "";
-        string contentType = "";
+        string destinationPath = $"output/{Guid.NewGuid()}.xlsx";
+        string contentType = "application/vnd.ms-excel";
         var putResult = await _s3Client.PutAsync(destinationPath, file, contentType);
 
         return putResult.IsSuccess;

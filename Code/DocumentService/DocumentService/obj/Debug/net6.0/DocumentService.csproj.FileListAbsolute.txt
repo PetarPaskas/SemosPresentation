@@ -122,3 +122,4 @@ C:\Users\petar\OneDrive\Radna površina\Semos\Code\Code\DocumentService\Document
 C:\Users\petar\OneDrive\Radna površina\Semos\Code\Code\DocumentService\DocumentService\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\petar\OneDrive\Radna površina\Semos\Code\Code\DocumentService\DocumentService\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\petar\OneDrive\Radna površina\Semos\Code\Code\DocumentService\DocumentService\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
+C:\Users\petar\OneDrive\Radna površina\Semos\Code\Code\DocumentService\DocumentService\bin\Debug\net6.0\AWSSDK.Extensions.NETCore.Setup.dll

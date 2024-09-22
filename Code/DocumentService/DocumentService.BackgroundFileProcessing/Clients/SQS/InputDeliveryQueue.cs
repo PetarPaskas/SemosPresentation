@@ -1,4 +1,5 @@
-﻿using Amazon.SQS;
+﻿using Amazon.S3.Util;
+using Amazon.SQS;
 using Amazon.SQS.Model;
 using DocumentService.Domain.Clients.SQS;
 
@@ -8,8 +9,8 @@ namespace DocumentService.BackgroundFileProcessing.Clients.SQS
     public class InputDeliveryQueue : ISqsClient
     {
         private IAmazonSQS _sqsClient;
-        private string _queueUrl = "";
-        private string _deadletterQueueUrl = "";
+        private string _queueUrl = "https://sqs.us-east-1.amazonaws.com/426540641256/input-deliveries";
+        private string _deadletterQueueUrl = "https://sqs.us-east-1.amazonaws.com/426540641256/input-deliveries_error";
         public InputDeliveryQueue(IAmazonSQS sqsClient)
         {
             _sqsClient = sqsClient;
@@ -79,7 +80,7 @@ namespace DocumentService.BackgroundFileProcessing.Clients.SQS
                     QueueUrl = _deadletterQueueUrl,
                     MessageAttributes = messageId == "" ? null : new Dictionary<string, MessageAttributeValue>()
                 {
-                    {"CorrelationId", new MessageAttributeValue(){ StringValue = messageId } }
+                    {"CorrelationId", new MessageAttributeValue(){ StringValue = messageId, DataType = "String" } }
                 }
                 };
 

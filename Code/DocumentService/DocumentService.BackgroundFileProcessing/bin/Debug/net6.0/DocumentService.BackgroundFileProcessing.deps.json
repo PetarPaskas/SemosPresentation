@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "DocumentService.BackgroundFileProcessing/1.0.0": {
         "dependencies": {
+          "AWSSDK.Extensions.NETCore.Setup": "4.0.0-preview.2",
           "AWSSDK.S3": "4.0.0-preview.2",
           "AWSSDK.SQS": "4.0.0-preview.2",
           "DocumentService.Domain": "1.0.0",
@@ -21,6 +22,20 @@
       "AWSSDK.Core/4.0.0-preview.2": {
         "runtime": {
           "lib/netcoreapp3.1/AWSSDK.Core.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        }
+      },
+      "AWSSDK.Extensions.NETCore.Setup/4.0.0-preview.2": {
+        "dependencies": {
+          "AWSSDK.Core": "4.0.0-preview.2",
+          "Microsoft.Extensions.Configuration.Abstractions": "8.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.Extensions.NETCore.Setup.dll": {
             "assemblyVersion": "4.0.0.0",
             "fileVersion": "4.0.0.0"
           }
@@ -634,6 +649,13 @@
       "sha512": "sha512-6nuzxpIh7Vs2ghYvzuT1af0zgUi2grqq+ZSO9vzcMIttFY6TqrK8r262dmyY5XSdqVAl/fzA5AxPNoAbxA/waw==",
       "path": "awssdk.core/4.0.0-preview.2",
       "hashPath": "awssdk.core.4.0.0-preview.2.nupkg.sha512"
+    },
+    "AWSSDK.Extensions.NETCore.Setup/4.0.0-preview.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-f34S3kghfBBBeGalyCSJwRiHXsotasDOh/6fKEBPqMG03jEjBFCbURdlevG1ikBcge9ZwG0omAQgA0uI4UYy4w==",
+      "path": "awssdk.extensions.netcore.setup/4.0.0-preview.2",
+      "hashPath": "awssdk.extensions.netcore.setup.4.0.0-preview.2.nupkg.sha512"
     },
     "AWSSDK.S3/4.0.0-preview.2": {
       "type": "package",
