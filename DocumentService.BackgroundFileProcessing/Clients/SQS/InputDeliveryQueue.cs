@@ -46,6 +46,12 @@ namespace DocumentService.BackgroundFileProcessing.Clients.SQS
 
                 var receiveResponse = await _sqsClient.ReceiveMessageAsync(receiveRequest);
 
+                if (receiveResponse.Messages is null || receiveResponse.Messages.Count == 0)
+                    return new SQSReceiveMessageResponse()
+                    {
+                        ReceivedMessages = 0
+                    };
+
                 if (receiveResponse.Messages.Count > 0)
                     return new SQSReceiveMessageResponse() { 
                         ReceivedMessages = 1, 

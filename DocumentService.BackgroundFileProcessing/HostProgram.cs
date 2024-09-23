@@ -1,10 +1,11 @@
 ﻿using DocumentService.BackgroundFileProcessing.Processes;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.Threading;
 
 namespace DocumentService.BackgroundFileProcessing;
 
-public class HostProgram : IHostedService
+public class HostProgram : BackgroundService
 {
     private readonly IServiceScopeFactory _serviceScopeFactory;
 
@@ -13,7 +14,17 @@ public class HostProgram : IHostedService
         _serviceScopeFactory = serviceScopeFactory;
     }
 
-    public async Task StartAsync(CancellationToken cancellationToken)
+    //public async Task StartAsync(CancellationToken cancellationToken)
+    //{
+
+    //}
+
+    //public async Task StopAsync(CancellationToken cancellationToken)
+    //{
+    //    await Console.Out.WriteLineAsync("HOST PROGRAM END");
+    //}
+
+    protected override async Task ExecuteAsync(CancellationToken cancellationToken)
     {
         await Console.Out.WriteLineAsync("HOST PROGRAM START");
         while (!cancellationToken.IsCancellationRequested)
@@ -24,12 +35,7 @@ public class HostProgram : IHostedService
                 await fileGenerationProcess.Process();
             }
 
-            await Task.Delay(2000, cancellationToken); 
+            await Task.Delay(2000, cancellationToken);
         }
-    }
-
-    public async Task StopAsync(CancellationToken cancellationToken)
-    {
-        await Console.Out.WriteLineAsync("HOST PROGRAM END");
     }
 }
