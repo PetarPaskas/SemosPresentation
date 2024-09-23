@@ -6,6 +6,7 @@ using DocumentService.Domain.Clients.S3;
 using DocumentService.Domain.Clients.SQS;
 using DocumentService.Domain.Contracts;
 using DocumentService.Domain.Persistence;
+using System.Diagnostics.Contracts;
 using System.Text.Json;
 
 
@@ -52,7 +53,9 @@ public class FileGenerationProcess : IFileGenerationProcess
             if (!validationResult.IsValid)
                 throw new Exception(String.Join(' ', validationResult.Errors));
 
-            var publishSuccess = await GenerateAndPublish(contract);
+            var xlsFileMetadata = _mapper.Map(contract);
+
+            var publishSuccess = await GenerateAndPublish(xlsFileMetadata);
             if (!publishSuccess)
                 throw new Exception(String.Join(' ', validationResult.Errors));
 
@@ -87,7 +90,6 @@ public class FileGenerationProcess : IFileGenerationProcess
 
     private async Task<(XlsFileInputDeliveryContentV1, string)> TryReceiveContractOrEmpty(SQSReceiveMessageResponse messageResponse)
     {
-        //Shouold look something like this
         var response = S3EventNotification.ParseJson(messageResponse.MessageContent);
         string objectPath = response.Records.First().S3.Object.Key;
 
@@ -96,18 +98,18 @@ public class FileGenerationProcess : IFileGenerationProcess
         if (!s3GetObjectResult.IsSuccess)
             return (null, null);
 
-        return (JsonSerializer
+        var contract = JsonSerializer
             .Deserialize<XlsFileInputDeliveryContentV1>
             (s3GetObjectResult.Content, new JsonSerializerOptions()
-        {
-            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-        }), objectPath);
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            });
+
+        return (contract, objectPath);
     }
 
-    private async Task<bool> GenerateAndPublish(XlsFileInputDeliveryContentV1 contract)
+    private async Task<bool> GenerateAndPublish(XlsFileMetadata xlsFileMetadata)
     {
-        var xlsFileMetadata = _mapper.Map(contract);
-
         var file = _fileGenerator.Process(xlsFileMetadata);
 
         string destinationPath = $"output/{Guid.NewGuid()}.xlsx";
