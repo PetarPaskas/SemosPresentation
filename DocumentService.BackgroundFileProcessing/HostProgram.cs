@@ -26,7 +26,6 @@ public class HostProgram : BackgroundService
 
     protected override async Task ExecuteAsync(CancellationToken cancellationToken)
     {
-        await Console.Out.WriteLineAsync("HOST PROGRAM START");
         while (!cancellationToken.IsCancellationRequested)
         {
             using (var scope = _serviceScopeFactory.CreateScope())
